@@ -29,28 +29,28 @@ class Student:
         
         
         # Load and display first image
-        img = Image.open(r"C:\Users\PMYLS\Documents\Images\student.jpg")
+        img = Image.open("./Images/student.jpg")
         img = img.resize((430, 130), Image.LANCZOS)
         self.photoimg = ImageTk.PhotoImage(img)
         f_lbl = Label(self.root, image=self.photoimg)
         f_lbl.place(x=0, y=0, width=430, height=130)
         
         # Load and display second image
-        img1 = Image.open(r"C:\Users\PMYLS\Documents\Images\yahoo.jpg")
+        img1 = Image.open("./Images/yahoo.jpg")
         img1 = img1.resize((430, 130), Image.LANCZOS)
         self.photoimg1 = ImageTk.PhotoImage(img1)
         f_lbl1 = Label(self.root, image=self.photoimg1)
         f_lbl1.place(x=430, y=0, width=430, height=130)
 
         # Load and display third image
-        img2 = Image.open(r"C:\Users\PMYLS\Documents\Images\smart-attendance.jpg")
+        img2 = Image.open("./Images/smart-attendance.jpg")
         img2 = img2.resize((430, 130), Image.LANCZOS)
         self.photoimg2 = ImageTk.PhotoImage(img2)
         f_lbl2 = Label(self.root, image=self.photoimg2)
         f_lbl2.place(x=860, y=0, width=430, height=130)
         
         # bg image
-        img3 = Image.open(r"C:\Users\PMYLS\Documents\Images\bg.png")
+        img3 = Image.open("./Images/bg.png")
         img3 = img3.resize((1450, 540), Image.LANCZOS)
         self.photoimg3 = ImageTk.PhotoImage(img3)
         
@@ -69,7 +69,7 @@ class Student:
         left_frame.place(x=10,y=0,width=610,height=450)
         
         
-        img_left = Image.open(r"C:\Users\PMYLS\Documents\Images\hehe.jpg")
+        img_left = Image.open("./Images/hehe.jpg")
         img_left = img_left.resize((610, 130), Image.LANCZOS)
         self.photoimg_left = ImageTk.PhotoImage(img_left)
         
@@ -226,7 +226,7 @@ class Student:
         right_frame=LabelFrame(main_frame,bd=2,bg="white",relief=RIDGE,text="Student Details",font=("times new roman",12,"bold"))
         right_frame.place(x=630,y=0,width=610,height=450)
         
-        img_right = Image.open(r"C:\Users\PMYLS\Documents\Images\yes.jpg")
+        img_right = Image.open("./Images/yes.jpg")
         img_right = img_right.resize((610, 130), Image.LANCZOS)
         self.photoimg_right = ImageTk.PhotoImage(img_right)
         
@@ -261,46 +261,70 @@ class Student:
         scroll_x=ttk.Scrollbar(table_frame,orient=HORIZONTAL)
         scroll_y=ttk.Scrollbar(table_frame,orient=VERTICAL)
         
-        self.student_table=ttk.Treeview(table_frame,column=("dep","course","year","sem","id","name","div","dob", "email","roll","gender","phone","address","teacher","photo"),xscrollcommand=scroll_x.set,yscrollcommand=scroll_y.set)
-        
+        self.student_table = ttk.Treeview(table_frame, columns=("id", "dep", "course", "year", "sem", "name", "div", "roll", "gender", "dob", "email", "phone", "address", "teacher", "photo"), xscrollcommand=scroll_x.set, yscrollcommand=scroll_y.set)
         scroll_x.pack(side=BOTTOM,fill=X)
         scroll_y.pack(side=RIGHT,fill=Y)
         
         scroll_x.config(command=self.student_table.xview)
         scroll_y.config(command=self.student_table.yview)
         
-        self.student_table.heading("dep",text="Department")
-        self.student_table.heading("course",text="Course")
-        self.student_table.heading("year",text="Year")
-        self.student_table.heading("sem",text="Semester")
-        self.student_table.heading("id",text="StudentId")
-        self.student_table.heading("name",text="Name")
-        self.student_table.heading("div",text="Division")
-        self.student_table.heading("dob",text="DOB")
-        self.student_table.heading("email",text="Email")
-        self.student_table.heading("phone",text="Phone")
-        self.student_table.heading("address",text="Address")
-        self.student_table.heading("teacher",text="Teacher")
-        self.student_table.heading("photo",text="PhotoSampleStatus")
-        self.student_table["show"]="headings"
-        
-        self.student_table.column("dep",width=100)
-        self.student_table.column("course",width=100)
-        self.student_table.column("year",width=100)
-        self.student_table.column("sem",width=100)
-        self.student_table.column("id",width=100)
-        self.student_table.column("name",width=100)
-        self.student_table.column("roll",width=100)
-        self.student_table.column("gender",width=100)
-        self.student_table.column("div",width=100)
-        self.student_table.column("dob",width=100)
-        self.student_table.column("email",width=100)
-        self.student_table.column("phone",width=100)
-        self.student_table.column("address",width=100)
-        self.student_table.column("teacher",width=100)
-        self.student_table.column("photo",width=150)
+        self.student_table.heading("id", text="StudentId")
+        self.student_table.heading("dep", text="Department")
+        self.student_table.heading("course", text="Course")
+        self.student_table.heading("year", text="Year")
+        self.student_table.heading("sem", text="Semester")
+        self.student_table.heading("name", text="Name")
+        self.student_table.heading("div", text="Division")
+        self.student_table.heading("roll", text="Roll")
+        self.student_table.heading("gender", text="Gender")
+        self.student_table.heading("dob", text="DOB")
+        self.student_table.heading("email", text="Email")
+        self.student_table.heading("phone", text="Phone")
+        self.student_table.heading("address", text="Address")
+        self.student_table.heading("teacher", text="Teacher")
+        self.student_table.heading("photo", text="PhotoSampleStatus")
+        self.student_table["show"] = "headings"
+
+        # Configure columns
+        self.student_table.column("id", width=100)
+        self.student_table.column("dep", width=100)
+        self.student_table.column("course", width=100)
+        self.student_table.column("year", width=100)
+        self.student_table.column("sem", width=100)
+        self.student_table.column("name", width=100)
+        self.student_table.column("div", width=100)
+        self.student_table.column("roll", width=100)
+        self.student_table.column("gender", width=100)
+        self.student_table.column("dob", width=100)
+        self.student_table.column("email", width=100)
+        self.student_table.column("phone", width=100)
+        self.student_table.column("address", width=100)
+        self.student_table.column("teacher", width=100)
+        self.student_table.column("photo", width=150)
         
         self.student_table.pack(fill=BOTH,expand=1)
+        self.fetch_data()
+
+
+    def fetch_data(self):
+        conn=mysql.connector.connect(host='db',user='user',password='password',database='faceapp',port=3306)   
+        my_cursor = conn.cursor()
+        my_cursor.execute("SELECT * FROM student")
+        data = my_cursor.fetchall()
+        print("Hello here is data");
+        print(data)
+        
+        if len(data) != 0:
+            # Clear existing data in the table
+            self.student_table.delete(*self.student_table.get_children())
+        
+            # Insert new data
+            for row in data:
+                print("hello")
+                print (row)
+                self.student_table.insert("", END, values=row)
+                conn.commit()
+        conn.close()    
         
         #========================function declaration===========
     def add_data(self):
@@ -308,35 +332,36 @@ class Student:
            messagebox.showerror("Error", "All Fields are required", parent=self.root)
         else:
             try:
-                conn=mysql.connector.connect(host="localhost",username="root",password="l@ib@kh@n137571@",database="")    # Add your logic here to actually add the student details
+                conn=mysql.connector.connect(host='db',user='user',password='password',database='faceapp',port=3306)   
                 my_cursor=conn.cursor()
-                my_cursor.execute("insert into student values(%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s)",(
-                                                                                       self.var_dep.get(),
-                                                                                       self.var_course.get(),
-                                                                                       self.var_year.get(),
-                                                                                       self.var_semester.get(),
-                                                                                       self.var_std_id.get(),
-                                                                                       self.var_std_name.get(),
-                                                                                       self.var_div.get(),
-                                                                                       self.var_roll.get(),
-                                                                                       self.var_gender.get(),
-                                                                                       self.var_dob.get(),
-                                                                                       self.var_email.get(),
-                                                                                       self.var_phone.get(),
-                                                                                       self.var_address.get(),
-                                                                                       self.var_teacher.get(),
-                                                                                       self.var_radio1.get(),
-                                                                                     
-                                                                                     ))  
+                query = """
+                            INSERT INTO student (
+                                    Student_Id, Dep , Course, Year, Semester, Name, Division, Roll, Gender, DOB, Email, Phone, Address, Teacher
+                            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                        """
+                values = (
+                            self.var_id.get(),          # Should be Student_Id
+                            self.var_dep.get(),         # Department
+                            self.var_course.get(),
+                            self.var_year.get(),
+                            self.var_semester.get(),
+                            self.var_name.get(),
+                            self.var_div.get(),
+                            self.var_roll.get(),
+                            self.var_gender.get(),
+                            self.var_dob.get(),
+                            self.var_email.get(),
+                            self.var_phone.get(),
+                            self.var_address.get(),
+                            self.var_teacher.get()
+                        )        
+                my_cursor.execute(query, values)
                 conn.commit()
+                self.fetch_data()
                 conn.close()
                 messagebox.showinfo("Success", "Student details have been added successfully", parent=self.root)
             except Exception as es:
                 messagebox.showerror("Error", f"Due to: {str(es)}", parent=self.root)
-
- 
-            
-     
 
             
         
