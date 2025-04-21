@@ -33,7 +33,7 @@ def create_student_table_if_not_exists():
                     Teacher VARCHAR(45),
                     PhotoSample VARCHAR(45)
                 )
-                # """)
+                 """)
                 conn.commit()
                 print("✅ Student table checked/created.")
                 cursor.close()

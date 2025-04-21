@@ -47,93 +47,93 @@ class Face_Recognition_system:
         
         #student button
         img4 = Image.open("./Images/bg.png")
-        img4 = img4.resize((150, 150), Image.LANCZOS)
+        img4 = img4.resize((175, 175), Image.LANCZOS)
         self.photoimg4 = ImageTk.PhotoImage(img4)
         
         b1=Button(bg_img,image=self.photoimg4,command=self.student_details,cursor="hand2")
-        b1.place(x=150,y=100,width=150,height=150)
+        b1.place(x=150,y=100,width=175,height=155)
         
         b1_1=Button(bg_img,text="Student Details",command=self.student_details,cursor="hand2" ,font=("times new roman",15,"bold"),bg="darkblue",fg="white")
-        b1_1.place(x=150,y=250,width=150,height=25)
+        b1_1.place(x=150,y=250,width=175,height=25)
         
         #Detect face button
         img5 = Image.open("./Images/detect face.jpg")
-        img5 = img5.resize((150, 150), Image.LANCZOS)
+        img5 = img5.resize((175, 175), Image.LANCZOS)
         self.photoimg5 = ImageTk.PhotoImage(img5)
         
         b1=Button(bg_img,image=self.photoimg5,cursor="hand2")
-        b1.place(x=400,y=100,width=150,height=150)
+        b1.place(x=400,y=100,width=175,height=150)
         
         b1_1=Button(bg_img,text="Face Detector",cursor="hand2" ,font=("times new roman",15,"bold"),bg="darkblue",fg="white")
-        b1_1.place(x=400,y=250,width=150,height=25)
+        b1_1.place(x=400,y=250,width=175,height=25)
         
          #attendance button
         img6 = Image.open("./Images/OIP.jpeg")
-        img6 = img6.resize((150, 150), Image.LANCZOS)
+        img6 = img6.resize((175, 175), Image.LANCZOS)
         self.photoimg6 = ImageTk.PhotoImage(img6)
         
         b1=Button(bg_img,image=self.photoimg6,cursor="hand2")
-        b1.place(x=650,y=100,width=150,height=150)
+        b1.place(x=650,y=100,width=175,height=150)
         
         b1_1=Button(bg_img,text="attendance",cursor="hand2" ,font=("times new roman",15,"bold"),bg="darkblue",fg="white")
-        b1_1.place(x=650,y=250,width=150,height=25)
+        b1_1.place(x=650,y=250,width=175,height=25)
         
         #help button
         img7 = Image.open("./Images/helpdesk.png")
-        img7 = img7.resize((150, 150), Image.LANCZOS)
+        img7 = img7.resize((175, 175), Image.LANCZOS)
         self.photoimg7 = ImageTk.PhotoImage(img7)
         
         b1=Button(bg_img,image=self.photoimg7,cursor="hand2")
-        b1.place(x=900,y=100,width=150,height=150)
+        b1.place(x=900,y=100,width=175,height=150)
         
         b1_1=Button(bg_img,text="Help",cursor="hand2" ,font=("times new roman",15,"bold"),bg="darkblue",fg="white")
-        b1_1.place(x=900,y=250,width=150,height=25)
+        b1_1.place(x=900,y=250,width=175,height=25)
         
         
         #train button
         img8 = Image.open("./Images/trainFace-khom.png")
-        img8 = img8.resize((150, 150), Image.LANCZOS)
+        img8 = img8.resize((175, 175), Image.LANCZOS)
         self.photoimg8 = ImageTk.PhotoImage(img8)
         
         b1=Button(bg_img,image=self.photoimg8,cursor="hand2")
-        b1.place(x=150,y=330,width=150,height=150)
+        b1.place(x=150,y=330,width=175,height=150)
         
         b1_1=Button(bg_img,text="Train Data",cursor="hand2" ,font=("times new roman",15,"bold"),bg="darkblue",fg="white")
-        b1_1.place(x=150,y=473,width=150,height=25)
+        b1_1.place(x=150,y=473,width=175,height=25)
         
          #photos button
         img9 = Image.open("./Images/photos.jpg")
-        img9 = img9.resize((150, 150), Image.LANCZOS)
+        img9 = img9.resize((175, 175), Image.LANCZOS)
         self.photoimg9 = ImageTk.PhotoImage(img9)
         
         b1=Button(bg_img,image=self.photoimg9,cursor="hand2")
-        b1.place(x=400,y=330,width=150,height=150)
+        b1.place(x=400,y=330,width=175,height=150)
         
         b1_1=Button(bg_img,text="Photos",cursor="hand2" ,font=("times new roman",15,"bold"),bg="darkblue",fg="white")
-        b1_1.place(x=400,y=473,width=150,height=25)
+        b1_1.place(x=400,y=473,width=175,height=25)
         
         
          #Developer button
         img10 = Image.open("./Images/developer.jpg")
-        img10 = img10.resize((150, 150), Image.LANCZOS)
+        img10 = img10.resize((175, 175), Image.LANCZOS)
         self.photoimg10 = ImageTk.PhotoImage(img10)
         
         b1=Button(bg_img,image=self.photoimg10,cursor="hand2")
-        b1.place(x=650,y=330,width=150,height=150)
+        b1.place(x=650,y=330,width=175,height=150)
         
         b1_1=Button(bg_img,text="Developer",cursor="hand2" ,font=("times new roman",15,"bold"),bg="darkblue",fg="white")
-        b1_1.place(x=650,y=473,width=150,height=25)
+        b1_1.place(x=650,y=473,width=175,height=25)
         
          #Exit button
         img11 = Image.open("./Images/exit-sign-neon-style_77399-144.jpg")
-        img11 = img11.resize((150, 150), Image.LANCZOS)
+        img11 = img11.resize((175, 175), Image.LANCZOS)
         self.photoimg11 = ImageTk.PhotoImage(img11)
         
         b1=Button(bg_img,image=self.photoimg11,cursor="hand2")
-        b1.place(x=900,y=330,width=150,height=150)
+        b1.place(x=900,y=330,width=175,height=150)
         
         b1_1=Button(bg_img,text="Exit",cursor="hand2" ,font=("times new roman",15,"bold"),bg="darkblue",fg="white")
-        b1_1.place(x=900,y=473,width=150,height=25)
+        b1_1.place(x=900,y=473,width=175,height=25)
         
          # ===========function===========
     def student_details(self):

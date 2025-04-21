@@ -55,18 +55,18 @@ class Student:
         self.photoimg3 = ImageTk.PhotoImage(img3)
         
         bg_img = Label(self.root, image=self.photoimg3)
-        bg_img.place(x=0, y=130, width=1450, height=540)
+        bg_img.place(x=0, y=130, width=1450, height=580)
         
         title_lbl = Label(bg_img, text="STUDENT MANAGEMENT SYSTEM", font=("times new roman", 33, "bold"), bg="white", fg="dark green")
         title_lbl.place(x=0, y=0, width=1450, height=45)
         
         self.main_frame_width = 1450 - 200  # Desired width reduction from the right side
         main_frame = Frame(bg_img, bd=2,bg="white")
-        main_frame.place(x=3, y=55, width=self.main_frame_width, height=460)
+        main_frame.place(x=3, y=45, width=self.main_frame_width, height=470)
         
         #left label frame
         left_frame=LabelFrame(main_frame,bd=2,bg="white",relief=RIDGE,text="Student Details",font=("times new roman",12,"bold"))
-        left_frame.place(x=10,y=0,width=610,height=450)
+        left_frame.place(x=0,y=0,width=610,height=460)
         
         
         img_left = Image.open("./Images/hehe.jpg")
@@ -81,144 +81,154 @@ class Student:
         current_course_frame.place(x=10,y=80,width=595,height=100)
         # Department
         dep_label=Label(current_course_frame,text="Department",font=("times new roman",10,"bold"),bg="white")
-        dep_label.grid(row=0,column=0,padx=10)
+        dep_label.grid(row=0,column=0,padx=5)
         
         dep_combo=ttk.Combobox(current_course_frame,textvariable=self.var_dep,font=("times new roman",10,"bold"),state="read only")
         dep_combo["values"]=("Select Department","Computer","IT","CIVIL","Mechenical")
         dep_combo.current(0)
-        dep_combo.grid(row=0,column=1,padx=2,pady=10,sticky=W)
+        dep_combo.grid(row=0,column=1,padx=0,pady=5,sticky=W)
         
          # Course
         Course_label=Label(current_course_frame,text="Course",font=("times new roman",10,"bold"),bg="white")
-        Course_label.grid(row=0,column=2,padx=10,sticky=W)
+        Course_label.grid(row=0,column=2,padx=5,sticky=W)
         
         Course_combo=ttk.Combobox(current_course_frame,textvariable=self.var_course,font=("times new roman",10,"bold"),state="read only")
         Course_combo["values"]=("Select Course","FE","SE","TE","BE")
         Course_combo.current(0)
-        Course_combo.grid(row=0,column=3,padx=2,pady=10,sticky=W)
+        Course_combo.grid(row=0,column=3,padx=0,pady=5,sticky=W)
         
          # year
         Year_label=Label(current_course_frame,text="Year",font=("times new roman",10,"bold"),bg="white")
-        Year_label.grid(row=1,column=0,padx=10,sticky=W)
+        Year_label.grid(row=1,column=0,padx=5,sticky=W)
         
         Year_combo=ttk.Combobox(current_course_frame,textvariable=self.var_year,font=("times new roman",10,"bold"),state="read only")
         Year_combo["values"]=("Select Year","2020-2021","2021-2022","2022-2023","2023-2024")
         Year_combo.current(0)
-        Year_combo.grid(row=1,column=1,padx=2,pady=10,sticky=W)
+        Year_combo.grid(row=1,column=1,padx=0,pady=10,sticky=W)
         
          # Semester
         Semester_label=Label(current_course_frame,text="Semester",font=("times new roman",10,"bold"),bg="white")
-        Semester_label.grid(row=1,column=2,padx=10,sticky=W)
+        Semester_label.grid(row=1,column=2,padx=5,sticky=W)
         
         Semester_combo=ttk.Combobox(current_course_frame,textvariable=self.var_semester,font=("times new roman",10,"bold"),state="read only")
         Semester_combo["values"]=("Select Semester","semester-1","semester-2","semester-3")
         Semester_combo.current(0)
-        Semester_combo.grid(row=1,column=3,padx=2,pady=10,sticky=W)
+        Semester_combo.grid(row=1,column=3,padx=0,pady=5,sticky=W)
         
          # class student information
         Class_Student_frame = LabelFrame(left_frame,bd=2,bg="white", relief=RIDGE, text="Class Student Information", font=("times new roman", 12, "bold"))
-        Class_Student_frame.place(x=10, y=180, width=595, height=243)
+        Class_Student_frame.place(x=10, y=180, width=595, height=250)
         # student id
         Studentid_label=Label(Class_Student_frame,text="Student id:",font=("times new roman",10,"bold"),bg="white")
-        Studentid_label.grid(row=0,column=0,padx=10,pady=1,sticky=W)
+        Studentid_label.grid(row=0,column=0,padx=10,pady=2,sticky=W)
         
-        Studentid_entry=ttk.Entry(Class_Student_frame,textvariable=self.var_id,width=20, font=("times new roman", 12, "bold"))
-        Studentid_entry.grid(row=0,column=1,padx=5,pady=1,sticky=W)
+        Studentid_entry=ttk.Entry(Class_Student_frame,textvariable=self.var_id,width=12, font=("times new roman", 12, "bold"))
+        Studentid_entry.grid(row=0,column=1,padx=5,pady=2,sticky=W)
         
          # student name
         Student_name_label=Label(Class_Student_frame,text="Student name:",font=("times new roman",10,"bold"),bg="white")
-        Student_name_label.grid(row=0,column=2,padx=10,pady=1,sticky=W)
+        Student_name_label.grid(row=0,column=2,padx=10,pady=2,sticky=W)
         
-        Student_name_entry=ttk.Entry(Class_Student_frame,textvariable=self.var_name,width=20, font=("times new roman", 12, "bold"))
-        Student_name_entry.grid(row=0,column=3,padx=5,pady=1,sticky=W)
+        Student_name_entry=ttk.Entry(Class_Student_frame,textvariable=self.var_name,width=12, font=("times new roman", 12, "bold"))
+        Student_name_entry.grid(row=0,column=3,padx=5,pady=2,sticky=W)
         
          # Class division
         Class_div_label=Label(Class_Student_frame,text="Class division:",font=("times new roman",10,"bold"),bg="white")
-        Class_div_label.grid(row=1,column=0,padx=10,pady=1,sticky=W)
+        Class_div_label.grid(row=1,column=0,padx=10,pady=2,sticky=W)
         
-        Class_div_entry=ttk.Entry(Class_Student_frame,textvariable=self.var_div,width=20, font=("times new roman", 12, "bold"))
-        Class_div_entry.grid(row=1,column=1,padx=5,pady=1,sticky=W)
+        #Class_div_entry=ttk.Entry(Class_Student_frame,textvariable=self.var_div,width=12, font=("times new roman", 12, "bold"))
+        #Class_div_entry.grid(row=1,column=1,padx=5,pady=2,sticky=W)
+        
+        div_combo=ttk.Combobox(Class_Student_frame,textvariable=self.var_div, width=12,font=("times new roman",10,"bold"),state="read only")
+        div_combo["values"]=("A","B","c")
+        div_combo.current(0)
+        div_combo.grid(row=1,column=1,padx=5,pady=2,sticky=W)
         
          # Roll no
         Roll_No_label=Label(Class_Student_frame,text="Roll No:",font=("times new roman",10,"bold"),bg="white")
-        Roll_No_label.grid(row=1,column=2,padx=10,pady=1,sticky=W)
+        Roll_No_label.grid(row=1,column=2,padx=10,pady=2,sticky=W)
         
-        Roll_No_entry=ttk.Entry(Class_Student_frame,textvariable=self.var_roll,width=20, font=("times new roman", 12, "bold"))
-        Roll_No_entry.grid(row=1,column=3,padx=5,pady=1,sticky=W)
+        Roll_No_entry=ttk.Entry(Class_Student_frame,textvariable=self.var_roll,width=12, font=("times new roman", 12, "bold"))
+        Roll_No_entry.grid(row=1,column=3,padx=5,pady=2,sticky=W)
         
          # gender
         Gender_label=Label(Class_Student_frame,text="Gender:",font=("times new roman",10,"bold"),bg="white")
-        Gender_label.grid(row=2,column=0,padx=10,pady=1,sticky=W)
+        Gender_label.grid(row=2,column=0,padx=10,pady=2,sticky=W)
         
-        Gender_entry=ttk.Entry(Class_Student_frame,textvariable=self.var_gender,width=20, font=("times new roman", 12, "bold"))
-        Gender_entry.grid(row=2,column=1,padx=5,pady=1,sticky=W)
+        #Gender_entry=ttk.Entry(Class_Student_frame,textvariable=self.var_gender,width=12, font=("times new roman", 12, "bold"))
+        #Gender_entry.grid(row=2,column=1,padx=5,pady=2,sticky=W)
+        
+        Gender_combo=ttk.Combobox(Class_Student_frame,textvariable=self.var_gender,width=12,font=("times new roman",10,"bold"),state="read only")
+        Gender_combo["values"]=("Male","Female","other")
+        Gender_combo.current(0)
+        Gender_combo.grid(row=2,column=1,padx=5,pady=2,sticky=W)
         
          # DOB
         dob_label=Label(Class_Student_frame,text="DOB:",font=("times new roman",10,"bold"),bg="white")
-        dob_label.grid(row=2,column=2,padx=10,pady=1,sticky=W)
+        dob_label.grid(row=2,column=2,padx=10,pady=2,sticky=W)
         
-        dob_entry=ttk.Entry(Class_Student_frame,textvariable=self.var_dob,width=20, font=("times new roman", 12, "bold"))
-        dob_entry.grid(row=2,column=3,padx=5,pady=1,sticky=W)
+        dob_entry=ttk.Entry(Class_Student_frame,textvariable=self.var_dob,width=12, font=("times new roman", 12, "bold"))
+        dob_entry.grid(row=2,column=3,padx=5,pady=2,sticky=W)
          # EmailS
         email_label=Label(Class_Student_frame,text="Email:",font=("times new roman",10,"bold"),bg="white")
-        email_label.grid(row=3,column=0,padx=10,pady=1,sticky=W)
+        email_label.grid(row=3,column=0,padx=10,pady=2,sticky=W)
         
-        email_entry=ttk.Entry(Class_Student_frame,textvariable=self.var_email,width=20, font=("times new roman", 12, "bold"))
-        email_entry.grid(row=3,column=1,padx=5,pady=1,sticky=W)
+        email_entry=ttk.Entry(Class_Student_frame,textvariable=self.var_email,width=12, font=("times new roman", 12, "bold"))
+        email_entry.grid(row=3,column=1,padx=5,pady=2,sticky=W)
          # phone no
         phone_label=Label(Class_Student_frame,text="Phone no:",font=("times new roman",10,"bold"),bg="white")
-        phone_label.grid(row=3,column=2,padx=10,pady=1,sticky=W)
+        phone_label.grid(row=3,column=2,padx=10,pady=2,sticky=W)
         
-        phone_entry=ttk.Entry(Class_Student_frame,textvariable=self.var_phone,width=20, font=("times new roman", 12, "bold"))
-        phone_entry.grid(row=3,column=3,padx=5,pady=1,sticky=W)
+        phone_entry=ttk.Entry(Class_Student_frame,textvariable=self.var_phone,width=12, font=("times new roman", 12, "bold"))
+        phone_entry.grid(row=3,column=3,padx=5,pady=2,sticky=W)
         
         
         # Adress
         Address_label=Label(Class_Student_frame,text="Address:",font=("times new roman",10,"bold"),bg="white")
-        Address_label.grid(row=4,column=0,padx=10,pady=1,sticky=W)
+        Address_label.grid(row=4,column=0,padx=10,pady=2,sticky=W)
         
-        Address_entry=ttk.Entry(Class_Student_frame,textvariable=self.var_address,width=20, font=("times new roman", 12, "bold"))
-        Address_entry.grid(row=4,column=1,padx=5,pady=1,sticky=W)
+        Address_entry=ttk.Entry(Class_Student_frame,textvariable=self.var_address,width=12, font=("times new roman", 12, "bold"))
+        Address_entry.grid(row=4,column=1,padx=5,pady=2,sticky=W)
         
         # teacher name
         teacher_label=Label(Class_Student_frame,text="Teacher Name:",font=("times new roman",10,"bold"),bg="white")
-        teacher_label.grid(row=4,column=2,padx=10,pady=1,sticky=W)
+        teacher_label.grid(row=4,column=2,padx=10,pady=2,sticky=W)
         
-        teacher_entry=ttk.Entry(Class_Student_frame,textvariable=self.var_teacher,width=20, font=("times new roman", 12, "bold"))
-        teacher_entry.grid(row=4,column=3,padx=5,pady=1,sticky=W)
+        teacher_entry=ttk.Entry(Class_Student_frame,textvariable=self.var_teacher,width=12, font=("times new roman", 12, "bold"))
+        teacher_entry.grid(row=4,column=3,padx=5,pady=2,sticky=W)
         
         #radio Buttons
         self.var_radio1=StringVar()
-        radionbtn1=ttk.Radiobutton(Class_Student_frame,variable=self.var_radio1,text="take photo sample",value="yes")
-        radionbtn1.grid(row=5,column=0)
+        radionbtn1=ttk.Radiobutton(Class_Student_frame,variable=self.var_radio1,text=" photo sample",value="yes")
+        radionbtn1.grid(row=6,column=0,padx=2,pady=5)
         
         self.var_radio2=StringVar()
         radionbtn2=ttk.Radiobutton(Class_Student_frame,variable=self.var_radio2,text="No photo sample",value="NO")
-        radionbtn2.grid(row=5,column=1)
+        radionbtn2.grid(row=6,column=1,padx=2,pady=5)
         
         # button frame
         btn_frame=Frame(Class_Student_frame,bd=2,relief=RIDGE,bg="white")
-        btn_frame.place(x=0,y=165,width=590,height=40)
+        btn_frame.place(x=0,y=170,width=590,height=40)
         
-        save_btn=Button(btn_frame,text="Save",command=self.add_data,width=20,font=("times new roman",10,"bold"),bg="blue",fg="white")
+        save_btn=Button(btn_frame,text="Save",command=self.add_data,width=14,font=("times new roman",10,"bold"),bg="blue",fg="white")
         save_btn.grid(row=0,column=0)
         
-        Update_btn=Button(btn_frame,text="Update",width=20,font=("times new roman",10,"bold"),bg="blue",fg="white")
+        Update_btn=Button(btn_frame,text="Update",width=14,font=("times new roman",10,"bold"),bg="blue",fg="white")
         Update_btn.grid(row=0,column=1)
         
-        Delete_btn=Button(btn_frame,text="Delete",width=20,font=("times new roman",10,"bold"),bg="blue",fg="white")
+        Delete_btn=Button(btn_frame,text="Delete",width=14,font=("times new roman",10,"bold"),bg="blue",fg="white")
         Delete_btn.grid(row=0,column=2)
         
-        Reset_btn=Button(btn_frame,text="Reset",width=20,font=("times new roman",10,"bold"),bg="blue",fg="white")
+        Reset_btn=Button(btn_frame,text="Reset",width=14,font=("times new roman",10,"bold"),bg="blue",fg="white")
         Reset_btn.grid(row=0,column=3)
         
         btn_frame1=Frame(Class_Student_frame,bd=2,relief=RIDGE,bg="white")
-        btn_frame1.place(x=0,y=195,width=590,height=70)
+        btn_frame1.place(x=0,y=200,width=590,height=70)
         
-        take_photo_btn=Button(btn_frame1,text="Take Photo Sample",width=42,font=("times new roman",10,"bold"),bg="blue",fg="white")
+        take_photo_btn=Button(btn_frame1,text="Take Photo Sample",width=30,font=("times new roman",10,"bold"),bg="blue",fg="white")
         take_photo_btn.grid(row=0,column=0)
         
-        Update_Photo_btn=Button(btn_frame1,text="Update Photo Sample",width=42,font=("times new roman",10,"bold"),bg="blue",fg="white")
+        Update_Photo_btn=Button(btn_frame, text="Update", command=self.update_data, width=14, font=("times new roman",10,"bold"), bg="blue", fg="white")
         Update_Photo_btn.grid(row=0,column=1)
         
         
@@ -303,28 +313,11 @@ class Student:
         self.student_table.column("photo", width=150)
         
         self.student_table.pack(fill=BOTH,expand=1)
+        self.student_table.bind("<ButtonRelease>",self.get_cursor)
         self.fetch_data()
 
 
-    def fetch_data(self):
-        conn=mysql.connector.connect(host='db',user='user',password='password',database='faceapp',port=3306)   
-        my_cursor = conn.cursor()
-        my_cursor.execute("SELECT * FROM student")
-        data = my_cursor.fetchall()
-        print("Hello here is data");
-        print(data)
-        
-        if len(data) != 0:
-            # Clear existing data in the table
-            self.student_table.delete(*self.student_table.get_children())
-        
-            # Insert new data
-            for row in data:
-                print("hello")
-                print (row)
-                self.student_table.insert("", END, values=row)
-                conn.commit()
-        conn.close()    
+   
         
         #========================function declaration===========
     def add_data(self):
@@ -336,8 +329,8 @@ class Student:
                 my_cursor=conn.cursor()
                 query = """
                             INSERT INTO student (
-                                    Student_Id, Dep , Course, Year, Semester, Name, Division, Roll, Gender, DOB, Email, Phone, Address, Teacher
-                            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                                    Student_id, Dep , Course, Year, Semester, Name, Division, Roll, Gender, DOB, Email, Phone, Address, Teacher,photoSample
+                            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s,%s)
                         """
                 values = (
                             self.var_id.get(),          # Should be Student_Id
@@ -359,10 +352,96 @@ class Student:
                 conn.commit()
                 self.fetch_data()
                 conn.close()
+    
                 messagebox.showinfo("Success", "Student details have been added successfully", parent=self.root)
             except Exception as es:
                 messagebox.showerror("Error", f"Due to: {str(es)}", parent=self.root)
+                
+                #==================fetch data=======================
+                
+    def fetch_data(self):
+        conn=mysql.connector.connect(host='db',user='user',password='password',database='faceapp',port=3306)   
+        my_cursor = conn.cursor()
+        my_cursor.execute("SELECT * FROM student")
+        data = my_cursor.fetchall()
 
+        
+        if len(data) != 0:
+            # Clear existing data in the table
+            self.student_table.delete(*self.student_table.get_children())
+        
+            # Insert new data
+            for row in data:
+   
+                print (row)
+                self.student_table.insert("", END, values=row)
+                conn.commit()
+        conn.close()    
+        
+        #==============get cursor============
+    def get_cursor(self,event=""):
+        cursor_focus=self.student_table.focus()
+        content=self.student_table.item(cursor_focus)
+        data=content["values"]
+        
+        self.var_id.set(data[0]),
+        self.var_dep.set(data[1]),
+        self.var_course.set(data[2]),
+        self.var_year.set(data[3]),
+        self.var_semester.set(data[4]),
+        self.var_name.set(data[5]),
+        self.var_div.set(data[6]),
+        self.var_roll.set(data[7]),
+        self.var_gender.set(data[8]),
+        self.var_dob.set(data[9]),
+        self.var_email.set(data[10]),
+        self.var_phone.set(data[11]),
+        self.var_address.set(data[12]),
+        self.var_teacher.set(data[13]),
+        self.var_radio1.set(data[14]),
+        
+    #update function 
+    def update_data(self):
+        print("Hello update")  
+        if self.var_dep.get() == "Select Department" or self.var_name.get() == "" or self.var_id.get() == "":
+           messagebox.showerror("Error", "All Fields are required", parent=self.root)
+           print("Student ID to update:", self.var_id.get())
+        else:
+            try:
+                Update=messagebox.askyesno("Update","Do you want to update this student details",parent=self.root)  
+                if Update:
+                    conn=mysql.connector.connect(host='db',user='user',password='password',database='faceapp',port=3306)   
+                    my_cursor=conn.cursor()
+                    my_cursor.execute("Update student set  Dep=%s,course=%s,Year=%s,Semester=%s,Name=%s,Division=%s,Roll=%s,Gender=%s,Dob=%s,Email=%s,Phone=%s,Address=%s,Teacher=%s,PhotoSample=%s where Student_id=%s ",(
+                        
+                        
+                                          
+                                                                                              # Should be Student_Id
+                                                                                                                                 self.var_dep.get(),         # Department
+                                                                                                                                 self.var_course.get(),
+                                                                                                                                 self.var_year.get(),
+                                                                                                                                 self.var_semester.get(),
+                                                                                                                                 self.var_name.get(),
+                                                                                                                                 self.var_div.get(),
+                                                                                                                                 self.var_roll.get(),
+                                                                                                                                 self.var_gender.get(),
+                                                                                                                                 self.var_dob.get(),
+                                                                                                                                 self.var_email.get(),
+                                                                                                                                 self.var_phone.get(),
+                                                                                                                                 self.var_address.get(),
+                                                                                                                                 self.var_teacher.get(),   
+                                                                                                                                 self.var_radio1.get(),
+                                                                                                                                 self.var_id.get()
+                                                                                             ))
+                else:
+                    if not Update:
+                        return    
+                messagebox.showinfo("success","Students details successfully update completed" ,parent=self.root)
+                conn.commit()
+                self.fetch_data()
+                conn.close()
+            except Exception as es:
+                messagebox.showerror("Error",f"Due To:{repr(es)}",parent=self.root)
             
         
             
@@ -370,7 +449,7 @@ class Student:
         
         
 # Main block to run the application
-if __name__ == "__main__":
-    root = Tk()
-    obj = Student(root)
-    root.mainloop()
+        if __name__ == "__main__":
+          root = Tk()
+          obj = Student(root)
+          root.mainloop()
